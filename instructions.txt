@@ -5,3 +5,7 @@ scp /home/bwang/finalcomp/aes_key.bin marwah555@192.168.1.61:/home/marwah555/
 Enter Pass1234 as the password
 
 B"s IP: 192.168.1.46
+
+perf stat -e instructions,cycles,cache-misses,branches,branch-misses,cpu-clock,task-clock ./target/release/sender
+
+perf stat -e instructions,cycles,cache-misses,branches,branch-misses,cpu-clock,task-clock ./target/release/receiver
