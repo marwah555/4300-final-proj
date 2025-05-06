@@ -18,12 +18,6 @@ fn decrypt_data(encrypted_data: &[u8], key: &[u8]) -> Result<Vec<u8>> {
     let rest = crypter.finalize(&mut decrypted[count..])?;
     decrypted.truncate(count + rest);
 
-    // Remove padding
-    let padding_len = *decrypted.last().unwrap_or(&0) as usize;
-    if padding_len > 0 && padding_len <= BLOCK_SIZE {
-        decrypted.truncate(decrypted.len() - padding_len);
-    }
-
     Ok(decrypted)
 }
 
@@ -31,15 +25,15 @@ fn main() -> Result<()> {
     let mut key_file = File::open("/home/marwah555/aes_key.bin")?;
     let mut key = vec![0u8; BLOCK_SIZE];
     key_file.read_exact(&mut key)?;
+    println!("[Receiver] AES Key: {:02x?}", key);
 
-    let sender_ip = "192.168.1.46"; // Replace if needed
+    let sender_ip = "192.168.1.46"; // Set this to match your sender Pi
     let mut stream = TcpStream::connect((sender_ip, 12364))?;
     println!("[Receiver] Connected to sender");
 
     let mut log_file = OpenOptions::new().create(true).append(true).open("receiver_log.txt")?;
 
     loop {
-        // Read frame length
         let frame_length = match stream.read_u32::<BigEndian>() {
             Ok(len) => len as usize,
             Err(e) => {
@@ -55,7 +49,13 @@ fn main() -> Result<()> {
         }
 
         let start = Instant::now();
-        let decrypted = decrypt_data(&encrypted_frame, &key)?;
+        let decrypted = match decrypt_data(&encrypted_frame, &key) {
+            Ok(d) => d,
+            Err(e) => {
+                eprintln!("Decryption error: {e}");
+                break;
+            }
+        };
         let duration = start.elapsed();
 
         writeln!(
