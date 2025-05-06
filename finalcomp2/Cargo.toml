@@ -1,0 +1,12 @@
+[package]
+name = "sw_benchmarks"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+aes = "0.8"
+cbc = "0.1"
+block-padding = "0.3"
+rand = "0.8"
+rsa = "0.9"
+p256 = { version = "0.13", features = ["ecdh"] }
