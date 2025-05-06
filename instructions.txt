@@ -1,6 +1,6 @@
 For the following cmd, be sure to update M's ip num:
 Run scp /home/bwang/aes_key.bin marwah555@192.168.1.61:/home/marwah555/ from B's PI
-scp /home/bwang/finalcomp/aes_key.bin marwahpi@192.168.1.47:/home/marwah555/
+scp /home/bwang/finalcomp/aes_key.bin marwahpi@192.168.1.61:/home/marwah555/
 
 Enter Pass1234 as the password
 
