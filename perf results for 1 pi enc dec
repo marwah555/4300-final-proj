@@ -1,1 +1,229 @@
+16 bit, 1kb file:
+marwah555@marwahpi:~/finalcomp2 $ perf stat -e instructions,cycles,cache-misses,branches,branch-misses,cpu-clock,task-clock ./target/release/sw_benchmarks
+================ SOFTWARE-ONLY AES ====================
+AES Key: fc da 0e 0d ab 54 51 6c 0c b2 56 bb 0f 98 c5 30
+
+AES IV: 3a 76 1e f7 8c f8 f3 92 22 71 bc 41 7f 65 c5 2a
+
+Execution Time: 0.000058 seconds
+Approx. MFLOPS: 4399.68
+
+ Performance counter stats for './target/release/sw_benchmarks':
+
+           494,537      instructions:u                   #    1.04  insn per cycle            
+           474,233      cycles:u                         #    0.534 GHz                       
+             3,147      cache-misses:u                                                        
+            57,189      branches:u                       #   64.442 M/sec                     
+             3,838      branch-misses:u                  #    6.71% of all branches           
+              0.89 msec cpu-clock:u                      #    0.601 CPUs utilized             
+              0.89 msec task-clock:u                     #    0.603 CPUs utilized             
+
+       0.001477134 seconds time elapsed
+
+       0.001604000 seconds user
+       0.000000000 seconds sys
+
+24 bit, 1kb file:
+marwah555@marwahpi:~/finalcomp2 $ perf stat -e instructions,cycles,cache-misses,branches,branch-misses,cpu-clock,task-clock ./target/release/sw_benchmarks
+================ SOFTWARE-ONLY AES ====================
+AES Key: 11 47 b5 ba 80 b5 81 b2 87 f2 74 db b1 82 00 a4 be 96 ee 02 7d 94 72 8d
+
+AES IV: e9 78 4e 8c 93 9e 6d 4f 5a eb 0d 1b 86 67 ac 6c
+
+Execution Time: 0.000074 seconds
+Approx. MFLOPS: 3437.95
+
+ Performance counter stats for './target/release/sw_benchmarks':
+
+           537,446      instructions:u                   #    1.10  insn per cycle            
+           487,776      cycles:u                         #    0.475 GHz                       
+             3,126      cache-misses:u                                                        
+            58,403      branches:u                       #   56.899 M/sec                     
+             3,857      branch-misses:u                  #    6.60% of all branches           
+              1.03 msec cpu-clock:u                      #    0.629 CPUs utilized             
+              1.03 msec task-clock:u                     #    0.631 CPUs utilized             
+
+       0.001632264 seconds time elapsed
+
+       0.001738000 seconds user
+       0.000000000 seconds sys
+
+32 bit, 1kb file:
+marwah555@marwahpi:~/finalcomp2 $ perf stat -e instructions,cycles,cache-misses,branches,branch-misses,cpu-clock,task-clock ./target/release/sw_benchmarks
+================ SOFTWARE-ONLY AES ====================
+AES Key: 24 a7 36 33 54 72 30 33 88 09 87 4c a4 40 78 c1 25 95 22 b9 02 97 fd ed f2 ee d3 47 9f 1a f5 0e
+
+AES IV: 91 d6 da 45 0d 07 ff 7d 9b 76 7a e8 a8 2f 6c e9
+
+Execution Time: 0.000061 seconds
+Approx. MFLOPS: 4189.10
+
+ Performance counter stats for './target/release/sw_benchmarks':
+
+           593,662      instructions:u                   #    0.95  insn per cycle            
+           627,279      cycles:u                         #    0.762 GHz                       
+             3,197      cache-misses:u                                                        
+            61,315      branches:u                       #   74.525 M/sec                     
+             3,698      branch-misses:u                  #    6.03% of all branches           
+              0.82 msec cpu-clock:u                      #    0.599 CPUs utilized             
+              0.83 msec task-clock:u                     #    0.601 CPUs utilized             
+
+       0.001374061 seconds time elapsed
+
+       0.001474000 seconds user
+       0.000000000 seconds sys
+
+
+16 bit, 100kB file:
+marwah555@marwahpi:~/finalcomp2 $ perf stat -e instructions,cycles,cache-misses,branches,branch-misses,cpu-clock,task-clock ./target/release/sw_benchmarks
+================ SOFTWARE-ONLY AES ====================
+AES Key: 73 14 85 88 ad 02 1c 74 96 68 13 85 24 8a eb 2d
+
+AES IV: 41 8c 26 01 a1 a2 b3 7e 4d 64 fd 7e ed 4d 0c cc
+
+Execution Time: 0.003605 seconds
+Approx. MFLOPS: 7101.48
+
+ Performance counter stats for './target/release/sw_benchmarks':
+
+        23,725,863      instructions:u                   #    2.63  insn per cycle            
+         9,011,881      cycles:u                         #    1.976 GHz                       
+             7,181      cache-misses:u                                                        
+           418,864      branches:u                       #   91.849 M/sec                     
+             3,784      branch-misses:u                  #    0.90% of all branches           
+              4.56 msec cpu-clock:u                      #    0.900 CPUs utilized             
+              4.57 msec task-clock:u                     #    0.901 CPUs utilized             
+
+       0.005067314 seconds time elapsed
+
+       0.005134000 seconds user
+       0.000000000 seconds sys
+24 bit, 100kB file:
+marwah555@marwahpi:~/finalcomp2 $ perf stat -e instructions,cycles,cache-misses,branches,branch-misses,cpu-clock,task-clock ./target/release/sw_benchmarks
+================ SOFTWARE-ONLY AES ====================
+AES Key: 30 37 c0 23 e3 bc 22 df e1 08 62 bc cf 57 83 6f 46 85 9b 5c 94 8b 34 b1
+
+AES IV: f8 04 4e 8c 60 6e ec cb 41 7d a9 3a 5d a1 f0 e4
+
+Execution Time: 0.006623 seconds
+Approx. MFLOPS: 3865.59
+
+ Performance counter stats for './target/release/sw_benchmarks':
+
+        27,505,527      instructions:u                   #    2.71  insn per cycle            
+        10,161,474      cycles:u                         #    1.318 GHz                       
+             7,323      cache-misses:u                                                        
+           467,619      branches:u                       #   60.654 M/sec                     
+             4,022      branch-misses:u                  #    0.86% of all branches           
+              7.71 msec cpu-clock:u                      #    0.925 CPUs utilized             
+              7.72 msec task-clock:u                     #    0.926 CPUs utilized             
+
+       0.008335047 seconds time elapsed
+
+       0.008420000 seconds user
+       0.000000000 seconds sys
+
+32 bit, 100kB file:
+marwah555@marwahpi:~/finalcomp2 $ perf stat -e instructions,cycles,cache-misses,branches,branch-misses,cpu-clock,task-clock ./target/release/sw_benchmarks
+================ SOFTWARE-ONLY AES ====================
+AES Key: 94 9a c9 ba e4 cd 5e a9 71 f4 32 71 de e3 3d a6 94 ef 0f 32 82 58 e8 ba 87 e6 ff f4 be 3c d6 71
+
+AES IV: 31 39 3b 96 6f 9a 49 df 91 1e 90 7e 90 33 fd 32
+
+Execution Time: 0.004847 seconds
+Approx. MFLOPS: 5282.06
+
+ Performance counter stats for './target/release/sw_benchmarks':
+
+        31,824,854      instructions:u                   #    2.69  insn per cycle            
+        11,846,490      cycles:u                         #    2.082 GHz                       
+             7,234      cache-misses:u                                                        
+           538,778      branches:u                       #   94.672 M/sec                     
+             3,930      branch-misses:u                  #    0.73% of all branches           
+              5.69 msec cpu-clock:u                      #    0.905 CPUs utilized             
+              5.70 msec task-clock:u                     #    0.906 CPUs utilized             
+
+       0.006287465 seconds time elapsed
+
+       0.006304000 seconds user
+       0.000000000 seconds sys
+16 bit, 1MB file:
+marwah555@marwahpi:~/finalcomp2 $ perf stat -e instructions,cycles,cache-misses,branches,branch-misses,cpu-clock,task-clock ./target/release/sw_benchmarks
+================ SOFTWARE-ONLY AES ====================
+AES Key: 3a 43 41 7f 1f ab 15 1f 34 54 09 f3 b2 b1 23 d3
+
+AES IV: 90 56 30 d2 86 f1 72 dd d9 6b 41 46 1e ed 20 93
+
+Execution Time: 0.039589 seconds
+Approx. MFLOPS: 6621.56
+
+ Performance counter stats for './target/release/sw_benchmarks':
+
+       240,531,745      instructions:u                   #    2.65  insn per cycle            
+        90,803,143      cycles:u                         #    2.204 GHz                       
+            53,961      cache-misses:u                                                        
+         3,789,194      branches:u                       #   91.972 M/sec                     
+             3,826      branch-misses:u                  #    0.10% of all branches           
+             41.20 msec cpu-clock:u                      #    0.989 CPUs utilized             
+             41.20 msec task-clock:u                     #    0.989 CPUs utilized             
+
+       0.041669290 seconds time elapsed
+
+       0.037547000 seconds user
+       0.004171000 seconds sys
+
+24 bit, 1MB file:
+marwah555@marwahpi:~/finalcomp2 $ perf stat -e instructions,cycles,cache-misses,branches,branch-misses,cpu-clock,task-clock ./target/release/sw_benchmarks
+================ SOFTWARE-ONLY AES ====================
+AES Key: 3a 43 41 7f 1f ab 15 1f 34 54 09 f3 b2 b1 23 d3
+
+AES IV: 90 56 30 d2 86 f1 72 dd d9 6b 41 46 1e ed 20 93
+
+Execution Time: 0.039589 seconds
+Approx. MFLOPS: 6621.56
+
+ Performance counter stats for './target/release/sw_benchmarks':
+
+       240,531,745      instructions:u                   #    2.65  insn per cycle            
+        90,803,143      cycles:u                         #    2.204 GHz                       
+            53,961      cache-misses:u                                                        
+         3,789,194      branches:u                       #   91.972 M/sec                     
+             3,826      branch-misses:u                  #    0.10% of all branches           
+             41.20 msec cpu-clock:u                      #    0.989 CPUs utilized             
+             41.20 msec task-clock:u                     #    0.989 CPUs utilized             
+
+       0.041669290 seconds time elapsed
+
+       0.037547000 seconds user
+       0.004171000 seconds sys
+
+32 bit, 1MB File:
+    Finished `release` profile [optimized] target(s) in 0.51s
+marwah555@marwahpi:~/finalcomp2 $ perf stat -e instructions,cycles,cache-misses,branches,branch-misses,cpu-clock,task-clock ./target/release/sw_benchmarks
+================ SOFTWARE-ONLY AES ====================
+AES Key: 64 14 23 63 a8 3d b2 2e 12 1a 0d fb 8d 3a 27 c8 c8 fe 5d ca f8 fc fb d3 a6 1e c0 68 61 de e4 6e
+
+AES IV: 31 55 14 32 56 bb 26 77 d9 ed 94 d8 73 36 df 96
+
+Execution Time: 0.049606 seconds
+Approx. MFLOPS: 5284.48
+
+ Performance counter stats for './target/release/sw_benchmarks':
+
+       323,289,125      instructions:u                   #    2.73  insn per cycle            
+       118,631,004      cycles:u                         #    2.220 GHz                       
+            54,386      cache-misses:u                                                        
+         4,988,162      branches:u                       #   93.367 M/sec                     
+             3,784      branch-misses:u                  #    0.08% of all branches           
+             53.43 msec cpu-clock:u                      #    0.973 CPUs utilized             
+             53.44 msec task-clock:u                     #    0.974 CPUs utilized             
+
+       0.054888113 seconds time elapsed
+
+       0.050686000 seconds user
+       0.004223000 seconds sys
+
+
+
+
 
