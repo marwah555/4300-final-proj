@@ -1,0 +1,4 @@
+bwang@brandenpi:~ $ scp /home/bwang/finalcomp/aes_key.bin marwahpi@192.168.1.47:/home/marwah555/
+ssh: connect to host 192.168.1.47 port 22: No route to host
+scp: Connection closed
+bwang@brandenpi:~ $ 
