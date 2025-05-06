@@ -94,4 +94,19 @@ Receiver:
        0.004185000 seconds sys
 
 Sender:
+ Performance counter stats for './target/release/sender':
 
+         7,120,080      instructions:u                   #    1.30  insn per cycle            
+         5,470,356      cycles:u                         #    0.909 GHz                       
+            42,459      cache-misses:u                                                        
+         1,202,540      branches:u                       #  199.840 M/sec                     
+            23,737      branch-misses:u                  #    1.97% of all branches           
+              6.02 msec cpu-clock:u                      #    0.000 CPUs utilized             
+              6.03 msec task-clock:u                     #    0.000 CPUs utilized             
+
+      42.260896181 seconds time elapsed
+
+       0.003389000 seconds user
+       0.003389000 seconds sys
+
+AES 192 - 24 bit - 1kB file
