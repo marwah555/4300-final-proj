@@ -15,6 +15,7 @@ fn generate_key() -> Result<Vec<u8>> {
     rand::thread_rng().fill(&mut key[..]);
     let mut file = File::create("aes_key.bin")?;
     file.write_all(&key)?;
+    println!("[Sender] AES Key: {:02x?}", key);
     Ok(key)
 }
 
@@ -39,7 +40,7 @@ fn encrypt_data(data: &[u8], key: &[u8]) -> Result<Vec<u8>> {
 }
 
 fn main() -> Result<()> {
-    let key = generate_key()?;
+    let key = generate_key()?; // Save key to aes_key.bin
     let listener = TcpListener::bind("0.0.0.0:12364")?;
     println!("[Sender] Listening on port 12364...");
 
@@ -67,7 +68,6 @@ fn main() -> Result<()> {
         stream.write_u32::<BigEndian>(encrypted.len() as u32)?;
         stream.write_all(&encrypted)?;
 
-        // Prevent overloading the receiver
-        sleep(Duration::from_millis(100));
+        sleep(Duration::from_millis(100)); // Prevent flooding
     }
 }
