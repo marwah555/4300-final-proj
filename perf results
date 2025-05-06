@@ -109,4 +109,25 @@ Sender:
        0.003389000 seconds user
        0.003389000 seconds sys
 
-AES 192 - 24 bit - 1kB file
+AES 192 - 24 bit - 1MB file THIS NEEDS FIXING
+Receiver:
+marwah555@marwahpi:~/finalcomp $ perf stat -e instructions,cycles,cache-misses,branches,branch-misses,cpu-clock,task-clock ./target/release/receiver
+Error: failed to fill whole buffer
+
+ Performance counter stats for './target/release/receiver':
+
+           435,086      instructions:u                   #    0.78  insn per cycle            
+           554,574      cycles:u                         #    0.413 GHz                       
+            13,406      cache-misses:u                                                        
+            82,476      branches:u                       #   61.414 M/sec                     
+             4,300      branch-misses:u                  #    5.21% of all branches           
+              1.34 msec cpu-clock:u                      #    0.702 CPUs utilized             
+              1.35 msec task-clock:u                     #    0.704 CPUs utilized             
+
+       0.001913062 seconds time elapsed
+
+       0.002018000 seconds user
+       0.000000000 seconds sys
+
+
+
