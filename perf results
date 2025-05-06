@@ -33,3 +33,27 @@ Sender:
        0.000000000 seconds sys
 
 AES 128 - 16 bit - 100kB file
+
+Receiver:
+marwah555@marwahpi:~/finalcomp $ perf stat -e instructions,cycles,cache-misses,branches,branch-misses,cpu-clock,task-clock ./target/release/receiver
+[Receiver] AES-128 Key: [49, 86, c1, 2c, 01, 24, 9b, 2b, f7, c9, f5, 4f, a1, 18, 03, b6]
+[Receiver] Connected to sender
+[Receiver] Decryption complete. Output saved to decrypted_output.txt
+
+ Performance counter stats for './target/release/receiver':
+
+         5,336,145      instructions:u                   #    1.52  insn per cycle            
+         3,521,554      cycles:u                         #    0.896 GHz                       
+            23,162      cache-misses:u                                                        
+         1,111,484      branches:u                       #  282.931 M/sec                     
+            24,916      branch-misses:u                  #    2.24% of all branches           
+              3.93 msec cpu-clock:u                      #    0.102 CPUs utilized             
+              3.94 msec task-clock:u                     #    0.102 CPUs utilized             
+
+       0.038613184 seconds time elapsed
+
+       0.004660000 seconds user
+       0.000000000 seconds sys
+
+
+
