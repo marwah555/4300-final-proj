@@ -1,0 +1,19 @@
+AES 128 - 16 bit - 1kB file
+
+Receiver:
+ Performance counter stats for './target/release/receiver':
+
+         5,150,520      instructions:u                   #    1.53  insn per cycle            
+         3,372,404      cycles:u                         #    0.846 GHz                       
+            22,763      cache-misses:u                                                        
+         1,104,340      branches:u                       #  277.098 M/sec                     
+            23,084      branch-misses:u                  #    2.09% of all branches           
+              3.99 msec cpu-clock:u                      #    0.026 CPUs utilized             
+              3.99 msec task-clock:u                     #    0.026 CPUs utilized             
+
+       0.154914181 seconds time elapsed
+
+       0.000000000 seconds user
+       0.004744000 seconds sys
+
+Sender:
