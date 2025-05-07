@@ -14,12 +14,18 @@ curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 source $HOME/.cargo/env
 
 Then build the project by first navigating into the project directory 
-(meaning you're in the finalcomp2 folder) and running the cmd:
+(meaning you're in the finalcomp2 folder) and running the cmds:
 
 cargo build --release
 
-run the test and perf test by running:
-perf stat -e instructions,cycles,cache-misses,branches,branch-misses,cpu-clock,task-clock ./target/release/sw_benchmarks.
+then you can run each cryptographic algorithm script by running these commands:
+cargo run --release --bin AES128
+cargo run --release --bin AES192
+cargo run --release --bin AES256
 
-Change the AES bit size by changing the key size in main.rs. Save this. 
+to run perf test
+sudo perf stat ./target/release/AES128
+sudo perf stat ./target/release/AES192
+sudo perf stat ./target/release/AES256
+
 Change the size of the plaintext message file by copying and pasting the small, medium or large text file into message.txt
